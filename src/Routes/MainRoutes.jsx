@@ -9,6 +9,7 @@ import SignInPage from '../Pages/SignInPage';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import Cartpage from '../Pages/Cartpage';
+import Auth0Verify from '../api/Auth0Verify';
 
 const MainRoutes = () => {
   return (
@@ -31,7 +32,7 @@ const MainRoutes = () => {
 
       </Route>
 
-
+      <Route path='/auth0-verify' element={<Auth0Verify />} />
       <Route path='*' element={<Navigate to='/sign-up' />} />
     </Routes>
   );

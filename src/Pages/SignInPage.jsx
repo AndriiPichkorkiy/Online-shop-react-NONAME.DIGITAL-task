@@ -6,6 +6,7 @@ import { signIn } from "../redux/authSlice";
 import { NotificationManager } from 'react-notifications';
 import { ContainerCenter, Form } from "./Common.styled";
 import { StyledButton } from "../Components/Button/StyledButton";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const defaultState = {
   email: "",
@@ -53,10 +54,19 @@ const SignInPage = () => {
 
   const submitSignInWithGoogle = () => {
     signInWithGoogle().then(response => {
-      dispatch(signIn(response));
+      const userObj = {
+        displayName: response.displayName,
+        email: response.email,
+      }
+      dispatch(signIn(userObj));
       NotificationManager.success("", "Success", 2000);
     })
   }
+
+  // auth0
+  const { loginWithRedirect } = useAuth0();
+
+  // return <button onClick={() => loginWithRedirect()}>Log In</button>;
 
   return (
     <ContainerCenter>
@@ -89,6 +99,7 @@ const SignInPage = () => {
       <StyledButton type="submit" onClick={submitSignInWithGoogle}>
         Enter with Google
       </StyledButton>
+      <button onClick={() => loginWithRedirect()}>Enter with Auth0</button>;
       <div>
         <p>don't have an accaunt? </p>
         <StyledButton

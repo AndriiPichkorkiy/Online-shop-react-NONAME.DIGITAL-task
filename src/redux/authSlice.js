@@ -11,11 +11,11 @@ const authSlice = createSlice({
     signIn(_, { payload }) {
       return { user: payload };
     },
-    singOut() {
+    signOut() {
       return initialState;
     },
   },
 });
 
-export const { signIn, singOut } = authSlice.actions;
+export const { signIn, signOut } = authSlice.actions;
 export const authReducer = authSlice.reducer;

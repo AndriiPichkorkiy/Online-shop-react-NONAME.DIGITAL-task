@@ -4,7 +4,7 @@
   "author": {
     "name": "Andrii Pichkorkiy"
   },
-  "homepage": "https://AndriiPichkorkiy.github.io/Online-shop-react-NONAME.DIGITAL-task",
+  "homepage": "https://AndriiPichkorkiy.github.io/Online-shop-react-task",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",

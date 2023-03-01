@@ -36,6 +36,7 @@ const ProductPage = () => {
 
   const addToCart = () => {
     dispatch(addProductToCart(id))
+    setIsShowModal(true)
   }
 
   const redirectOnBuy = () => {
@@ -61,8 +62,8 @@ const ProductPage = () => {
       </Card>
       {
         isShowModal &&
-        <Portal toggleModal={hideModal}>
-          <PopupBuy />
+        <Portal toggleModal={hideModal} >
+          <PopupBuy isLogin={isLogin} toggleModal={hideModal} />
         </Portal>
       }
     </ContainerCenter>

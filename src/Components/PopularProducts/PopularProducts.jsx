@@ -14,7 +14,7 @@ const PopularProducts = () => {
     apiShop.getProducts(limit).then(setProduct).finally(() => setIsLoading(false))
 
   }, [])
-  console.log(products)
+
   return (
     <>
       <h1>Popular products:</h1>

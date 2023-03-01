@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import apiAuth from "../api/apiAuth";
+import apiAuth, { signInWithGoogle } from "../api/apiAuth";
 import { signIn } from "../redux/authSlice";
 import { NotificationManager } from 'react-notifications';
 import { ContainerCenter, Form } from "./Common.styled";
@@ -51,6 +51,13 @@ const SignInPage = () => {
     }
   }
 
+  const submitSignInWithGoogle = () => {
+    signInWithGoogle().then(response => {
+      dispatch(signIn(response));
+      NotificationManager.success("", "Success", 2000);
+    })
+  }
+
   return (
     <ContainerCenter>
       <Form>
@@ -74,10 +81,14 @@ const SignInPage = () => {
         </div>
         <div>
           <StyledButton type="submit" onClick={submit}>
-            Enter
+            Enter with email
           </StyledButton>
+
         </div>
       </Form>
+      <StyledButton type="submit" onClick={submitSignInWithGoogle}>
+        Enter with Google
+      </StyledButton>
       <div>
         <p>don't have an accaunt? </p>
         <StyledButton

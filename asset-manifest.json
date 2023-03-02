@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/Online-shop-react-task/static/css/main.9dcfd706.css",
-    "main.js": "/Online-shop-react-task/static/js/main.adaceb59.js",
+    "main.css": "/Online-shop-react-task/static/css/main.7d552394.css",
+    "main.js": "/Online-shop-react-task/static/js/main.29419d03.js",
     "static/media/6.jpg": "/Online-shop-react-task/static/media/6.85156898bc8f0fb00eb1.jpg",
     "static/media/7.jpg": "/Online-shop-react-task/static/media/7.6a09fe3a60c05594a7b0.jpg",
     "static/media/10.jpg": "/Online-shop-react-task/static/media/10.93b7c5071c15d7063103.jpg",
     "static/media/9.jpg": "/Online-shop-react-task/static/media/9.886bd331db65b93ca811.jpg",
     "static/media/8.jpg": "/Online-shop-react-task/static/media/8.b66bf82a1d2d9732f140.jpg",
+    "static/media/11.jpg": "/Online-shop-react-task/static/media/11.497b4ec09cab5d5c4ec8.jpg",
+    "static/media/orderEmpty.jpg": "/Online-shop-react-task/static/media/orderEmpty.bb1dc8b7b947bc2fda4a.jpg",
     "static/media/notification.svg?s3g3t9": "/Online-shop-react-task/static/media/notification.5d0158671dd860c714c4.svg",
     "static/media/notification.eot": "/Online-shop-react-task/static/media/notification.3657084dc0419605a91c.eot",
     "static/media/notification.woff?s3g3t9": "/Online-shop-react-task/static/media/notification.c392cd33d9d9de730f9d.woff",
     "static/media/notification.ttf?s3g3t9": "/Online-shop-react-task/static/media/notification.c5d9251ea82e42f75381.ttf",
     "index.html": "/Online-shop-react-task/index.html",
-    "main.9dcfd706.css.map": "/Online-shop-react-task/static/css/main.9dcfd706.css.map",
-    "main.adaceb59.js.map": "/Online-shop-react-task/static/js/main.adaceb59.js.map"
+    "main.7d552394.css.map": "/Online-shop-react-task/static/css/main.7d552394.css.map",
+    "main.29419d03.js.map": "/Online-shop-react-task/static/js/main.29419d03.js.map"
   },
   "entrypoints": [
-    "static/css/main.9dcfd706.css",
-    "static/js/main.adaceb59.js"
+    "static/css/main.7d552394.css",
+    "static/js/main.29419d03.js"
   ]
 }

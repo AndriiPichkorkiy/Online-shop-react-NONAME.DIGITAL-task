@@ -20,7 +20,7 @@ const defaultSlides = [
 const DefCarousel = ({ slides = defaultSlides }) => {
 
   return (
-    <Carousel emulateTouch={true} showThumbs={false}>
+    <Carousel autoPlay emulateTouch={true} showThumbs={false}>
       {slides.map((item, i) => <CarouselItem {...item} key={i} />)}
     </Carousel>
 

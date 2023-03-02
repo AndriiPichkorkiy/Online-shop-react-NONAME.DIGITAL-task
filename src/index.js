@@ -13,8 +13,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 const DOMAIN = process.env.REACT_APP_AUTH0_DOMAIN;
 const CLIENT_ID = process.env.REACT_APP_AUTH0_CLIENT_ID;
-console.log("DOMAIN", DOMAIN);
-console.log("CLIENT_ID", CLIENT_ID);
+const PUBLIC_URL = process.env.PUBLIC_URL;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,7 +23,7 @@ root.render(
         domain={DOMAIN}
         clientId={CLIENT_ID}
         authorizationParams={{
-          redirect_uri: window.location.origin,
+          redirect_uri: window.location.origin + PUBLIC_URL,
         }}
       >
         <HashRouter>

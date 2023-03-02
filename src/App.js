@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 function App() {
   // auch0
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
   const dispatch = useDispatch();
   useEffect(() => {
     if (isAuthenticated) {
@@ -20,6 +20,8 @@ function App() {
       };
       dispatch(signIn(userObj));
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
   return (

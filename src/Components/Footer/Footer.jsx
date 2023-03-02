@@ -1,37 +1,38 @@
-import { FooterContainer, FooterLinkList, FooterTitle, SocialContainer } from "./Footer.styled";
+import { FooterContainer, FooterLinkList, FooterTitle, SocialContainer, CopyRights, FooterLink } from "./Footer.styled";
 import { FacebookSquare } from '@styled-icons/boxicons-logos/FacebookSquare'
 import { Linkedin } from '@styled-icons/boxicons-logos/Linkedin'
 import { Github } from '@styled-icons/bootstrap/Github'
 
 const Footer = () => {
+  const iconsSize = 32;
   return (
     <FooterContainer>
       <SocialContainer>
         <FooterTitle>More about us: </FooterTitle>
         <FooterLinkList inline>
           <li >
-            <a href="/"  ><FacebookSquare size="48" title="Facebook" /></a>
+            <FooterLink href="/"  ><FacebookSquare size={iconsSize} title="Facebook" /></FooterLink>
           </li>
           <li >
-            <a href="/"  ><Linkedin size="48" title="Linkedin" /></a>
+            <FooterLink href="/"  ><Linkedin size={iconsSize} title="Linkedin" /></FooterLink>
           </li>
           <li >
-            <a href="/"  ><Github size="48" title="Github" /></a>
+            <FooterLink href="/"  ><Github size={iconsSize} title="Github" /></FooterLink>
           </li>
         </FooterLinkList>
       </SocialContainer>
       <FooterLinkList>
         <li>
-          <a href="/"  >Conditions of Use</a>
+          <FooterLink href="/"  >Conditions of Use</FooterLink>
         </li>
         <li>
-          <a href="/"  >Privacy Notice</a>
+          <FooterLink href="/"  >Privacy Notice</FooterLink>
         </li>
         <li>
-          <a href="/"  >Your Ads Privacy Choices</a>
+          <FooterLink href="/"  >Your Ads Privacy Choices</FooterLink>
         </li>
       </FooterLinkList>
-      <span>© 1996-2023, example.com.ua, Inc. or its affiliates</span>
+      <CopyRights>© 1996-2023, example.com.ua, Inc. or its affiliates</CopyRights>
     </FooterContainer>
   );
 }

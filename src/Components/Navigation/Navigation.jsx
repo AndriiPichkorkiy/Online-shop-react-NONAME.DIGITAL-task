@@ -4,7 +4,7 @@ const Navigation = ({ style }) => {
   return (
     <NavContainer style={{ ...style }}>
       <NavLinkStyled to="/">Home</NavLinkStyled>
-      <NavLinkStyled to="/products">All products</NavLinkStyled>
+      <NavLinkStyled to="/products/electronics">All products</NavLinkStyled>
     </NavContainer>
   );
 }

@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import { signIn } from '../redux/authSlice'
 
 const Auth0Verify = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
   const dispatch = useDispatch()
 
   if (isAuthenticated) {

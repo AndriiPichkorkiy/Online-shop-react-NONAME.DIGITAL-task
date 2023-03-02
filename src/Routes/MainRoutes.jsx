@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import CommonTemplate from '../Components/CommonTemplate/CommonTemplate';
 import HomePage from '../Pages/HomePage';
-import CabinetPage from '../Pages/CabinetPage';
+import CabinetPage from '../Pages/CabinetPage/CabinetPage';
 import AllProductsPage from '../Pages/AllProductsPage/AllProductsPage';
 import ProductPage from '../Pages/ProductPage';
 import SingUpPage from '../Pages/SingUpPage';
@@ -26,7 +26,6 @@ const MainRoutes = () => {
         </Route>
 
         <Route index element={<HomePage />} />
-        <Route path="products/" element={<Navigate to='/products/electronics' />} />
         <Route path="products/:category" element={<AllProductsPage />} />
         <Route path="products/:category/:productId" element={<ProductPage />} />
 

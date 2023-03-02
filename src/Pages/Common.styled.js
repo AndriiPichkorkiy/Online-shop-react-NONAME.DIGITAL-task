@@ -16,8 +16,3 @@ export const ContainerCenter = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-export const Form = styled.form`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`;

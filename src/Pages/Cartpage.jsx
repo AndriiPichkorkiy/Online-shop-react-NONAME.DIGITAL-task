@@ -25,11 +25,14 @@ const Cartpage = () => {
 
   //every time when user add more products to Cart, re-calculate count of products:
   useEffect(() => {
+    const newProductsArray = []
     products.forEach(itemProduct => {
       const index = cart.findIndex(cartItem => cartItem.id === itemProduct.id)
+      if (index === -1) return;
       itemProduct.count = cart[index].count
+      newProductsArray.push(itemProduct)
     })
-    setProducts([...products])
+    setProducts(newProductsArray)
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart])
@@ -60,7 +63,7 @@ const Cartpage = () => {
   return (
     <>
       <CartList products={products} />
-      <StyledButton onClick={buyProducts}>Buy</StyledButton>
+      <StyledButton coloredBtn small onClick={buyProducts}>Buy</StyledButton>
     </>
 
   );

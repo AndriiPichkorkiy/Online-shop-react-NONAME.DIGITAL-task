@@ -8,5 +8,5 @@ export const PortalContainer = styled.div`
   background-color: white;
   padding: 2rem;
   border-radius: 16px;
-  border: solid black 1px
+  border: solid #B9B7BD 0.5px
 `

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { NavLink, useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { apiShop } from "../api/apiShop";
 import { Card, CharTitle, CharDesc, ImageThumb, Title, Description, PriceTitle, PriceDecs } from "../Components/ProductsComponents/Products/Products.styled"
 import { addProductToCart } from "../redux/cartSlice";
@@ -10,8 +10,10 @@ import { useSelector } from "react-redux";
 import PopupBuy from "../Components/Portal/Popup";
 import Portal from "../Components/Portal/Portal";
 
-import { StyledButton } from "../Components/Button/StyledButton"
+import { StyledButton, ButtonGoBack } from "../Components/Button/StyledButton"
 import { ContainerCenter } from "./Common.styled";
+
+import { ArrowBack } from '@styled-icons/boxicons-regular/ArrowBack'
 
 const ProductPage = () => {
   const [product, setProduct] = useState(null)
@@ -45,11 +47,15 @@ const ProductPage = () => {
 
   const { id, description, image, price, rating, title, category } = product
   const backLinkHref = location.state?.from ?? "/products/" + category;
+  const iconsSize = 24;
 
   return (
     <ContainerCenter>
       <Card>
-        <NavLink to={backLinkHref}>Go back</NavLink>
+        <ButtonGoBack to={backLinkHref}>
+          <ArrowBack size={iconsSize} title="Linkedin" />
+          Go back
+        </ButtonGoBack>
         <Title data-text={title}>{title}</Title>
         <ImageThumb src={image} alt="product ImageThumb" />
         <CharTitle>Category: </CharTitle><CharDesc>{category}</CharDesc>,
@@ -58,7 +64,7 @@ const ProductPage = () => {
         <PriceTitle>price:</PriceTitle><PriceDecs> {price}</PriceDecs>
 
         <p>rating: {rating.rate} of {rating.count} votes</p>
-        <StyledButton onClick={isLogin ? addToCart : redirectOnBuy} margin>Add to Cart</StyledButton>
+        <StyledButton onClick={isLogin ? addToCart : redirectOnBuy} coloredBtn>Add to Cart</StyledButton>
       </Card>
       {
         isShowModal &&

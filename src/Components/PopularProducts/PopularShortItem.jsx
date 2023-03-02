@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { Card, ImageThumb, Title, PriceTitle, PriceDecs } from "../ProductsComponents/Products/Products.styled"
+import { Card, ImageThumb, Title, PriceTitle, PriceDecs, Rating } from "../ProductsComponents/Products/Products.styled"
 
 const PopularShortItem = ({ product: { id, image, price, rating, title, category } }) => {
   const navigate = useNavigate()
@@ -12,7 +12,7 @@ const PopularShortItem = ({ product: { id, image, price, rating, title, category
       <ImageThumb src={image} alt="product ImageThumb" />
       <PriceTitle>price:</PriceTitle><PriceDecs> {price}</PriceDecs>
 
-      <p>rating: {rating.rate} of {rating.count} votes</p>
+      <Rating>rating: {rating.rate} of {rating.count} votes</Rating>
     </Card>
   )
 }

@@ -10,19 +10,25 @@ export const CardList = styled.ul`
 export const Card = styled.li`
   width: 25%;
   max-width: ${({ short }) => short ? "15%" : "unset"};
-  border-color: grey;
+  border-color: #B9B7BD;
   border-style: solid;
   border-width: 1px;
-  border-radius: 16px;
+  border-radius: 8px;
   margin: 2rem;
   padding: 1rem;
 
   &:hover{
-    background-color: #00000035;;
+    background-color: #00000035;
+
   }
+
+  &:hover > * {
+    color: white
+  }
+
 `
 export const Title = styled.h3`
-  color: orange;
+  color: #4E4F50;
   font-size: 1.2rem;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -46,7 +52,7 @@ export const Title = styled.h3`
     white-space: normal;
     word-wrap: break-word;
     display:block;
-    color:black;
+    color:#868B8E;
     margin-top:-1.25rem;
     z-index: 2000;
     transform: translateX(-10%);
@@ -63,13 +69,13 @@ export const ImageThumb = styled.img`
 
 export const CharTitle = styled.span`
  font-size: 0.8rem;
- color: tomato;
+ color: #E7D2CC;
 
 font-weight: bold;
 `
 export const CharDesc = styled.span`
  font-size: 0.8rem;
- color: tomato;
+ color: #E7D2CC;
  font-weight: normal;
 `
 
@@ -77,15 +83,20 @@ export const Description = styled.p`
   margin-top: 1rem;
   padding-top: 0.5rem;
  border-top: solid grey 1px;
+ color: #868B8E;
 `
 export const PriceTitle = styled.span`
 margin-top: 1rem;
 display: inline-block;
- color: palevioletred;
+ color: #E7D2CC;
 
 font-weight: bold;
 `
 export const PriceDecs = styled.span`
- color: green;
+ color: #4E4F50;
  font-weight: normal;
+`
+export const Rating = styled.p`
+color: #868B8E;
+ font-size: 0.8rem;
 `

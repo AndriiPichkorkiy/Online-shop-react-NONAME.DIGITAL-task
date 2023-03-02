@@ -2,6 +2,7 @@
 import { PortalContainer } from "./Portal.styled";
 
 import { createPortal } from "react-dom";
+import { ButtonClose } from '../Button/StyledButton'
 
 const Portal = ({ children, toggleModal }) => {
   const closeModal = () => {
@@ -11,7 +12,7 @@ const Portal = ({ children, toggleModal }) => {
 
   return createPortal(
     <PortalContainer>
-      <button onClick={closeModal}>X</button>
+      <ButtonClose onClick={closeModal}>X</ButtonClose>
       {children}
     </PortalContainer>,
 

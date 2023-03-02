@@ -1,10 +1,15 @@
+import { CartListTitle } from "./Cart.styled";
 import CartListItem from "./CartListItem";
 
 const CartList = ({ products }) => {
   return (
-    <ul>
-      {products.map(product => <CartListItem product={product} key={product.id} />)}
-    </ul>
+    <>
+      <CartListTitle>Shopping Cart</CartListTitle>
+      <ul>
+        {products.map(product => <CartListItem product={product} key={product.id} />)}
+      </ul>
+    </>
+
   );
 }
 

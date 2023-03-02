@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiAuth from "../api/apiAuth";
 import { NotificationManager } from 'react-notifications';
-import { ContainerCenter, Form } from "./Common.styled";
+import { ContainerCenter } from "./Common.styled";
+import { Form, TitelInput, FormFooter, FormFooterLink } from "./SignInUp.styled";
 import { StyledButton } from "../Components/Button/StyledButton";
 
 const defaultState = {
@@ -48,7 +49,7 @@ const SingUpPage = () => {
     <ContainerCenter>
       <Form>
         <div>
-          <p>Name:</p>
+          <TitelInput>Name:</TitelInput>
           <input
             type="text"
             name="name"
@@ -57,7 +58,7 @@ const SingUpPage = () => {
           />
         </div>
         <div>
-          <p>Email:</p>
+          <TitelInput>Email:</TitelInput>
           <input
             type="text"
             name="email"
@@ -66,7 +67,7 @@ const SingUpPage = () => {
           />
         </div>
         <div>
-          <p>Password:</p>
+          <TitelInput>Password:</TitelInput>
           <input
             type="password"
             name="password"
@@ -75,21 +76,21 @@ const SingUpPage = () => {
           />
         </div>
         <div>
-          <StyledButton type="submit" onClick={submit}>
-            Enter
+          <StyledButton coloredBtn type="submit" onClick={submit}>
+            Registration
           </StyledButton>
         </div>
       </Form>
-      <div>
+      <FormFooter>
         <p>allready have an accaunt? </p>
-        <StyledButton
+        <FormFooterLink
           onClick={() => {
             navigate("/sign-in");
           }}
         >
-          go to login screen
-        </StyledButton>
-      </div>
+          Go to login screen
+        </FormFooterLink>
+      </FormFooter>
     </ContainerCenter>
   );
 }

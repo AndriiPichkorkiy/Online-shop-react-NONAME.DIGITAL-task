@@ -11,4 +11,4 @@
 ## Technologies
 
 - **Front-end**: React, Redux (Redux Toolkit)
-- **Back-end**: FireBase
+- **Back-end**: FireBase, auth0

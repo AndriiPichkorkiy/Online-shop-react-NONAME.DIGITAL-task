@@ -4,9 +4,12 @@ import { useNavigate } from "react-router-dom";
 import apiAuth, { signInWithGoogle } from "../api/apiAuth";
 import { signIn } from "../redux/authSlice";
 import { NotificationManager } from 'react-notifications';
-import { ContainerCenter, Form } from "./Common.styled";
+import { ContainerCenter } from "./Common.styled";
+import { Form, TitelInput, FormFooter, FormFooterLink, ServicesEnterContainer } from "./SignInUp.styled";
 import { StyledButton } from "../Components/Button/StyledButton";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Auth0 } from "@styled-icons/simple-icons/Auth0"
+import { Google } from "@styled-icons/boxicons-logos/Google"
 
 const defaultState = {
   email: "",
@@ -66,13 +69,14 @@ const SignInPage = () => {
   // auth0
   const { loginWithRedirect } = useAuth0();
 
-  // return <button onClick={() => loginWithRedirect()}>Log In</button>;
+  const iconSizeGoogle = 42;
+  const iconSizeAuth0 = 36;
 
   return (
     <ContainerCenter>
       <Form>
         <div>
-          <p>Email:</p>
+          <TitelInput>Email:</TitelInput>
           <input
             type="text"
             name="email"
@@ -81,7 +85,7 @@ const SignInPage = () => {
           />
         </div>
         <div>
-          <p>Password:</p>
+          <TitelInput>Password:</TitelInput>
           <input
             type="password"
             name="password"
@@ -90,28 +94,35 @@ const SignInPage = () => {
           />
         </div>
         <div>
-          <StyledButton type="submit" onClick={submit}>
-            Enter with email
+          <StyledButton coloredBtn type="submit" onClick={submit}>
+            Enter
           </StyledButton>
 
         </div>
       </Form>
-      <StyledButton type="submit" onClick={submitSignInWithGoogle}>
-        Enter with Google
-      </StyledButton>
-      <button onClick={() => loginWithRedirect()}>Enter with Auth0</button>;
-      <div>
+      <ServicesEnterContainer>
+        <StyledButton Service type="submit" onClick={submitSignInWithGoogle}>
+          <Google size={iconSizeGoogle} /> Google
+        </StyledButton>
+        <StyledButton Service onClick={() => loginWithRedirect()}>
+          <Auth0 size={iconSizeAuth0} />
+          Auth0
+        </StyledButton>
+      </ServicesEnterContainer>
+
+
+      <FormFooter>
         <p>don't have an accaunt? </p>
-        <StyledButton
+        <FormFooterLink
           onClick={() => {
             navigate("/sign-up");
           }}
         >
-          go to registration screen
-        </StyledButton>
-      </div>
+          Go to registration screen
+        </FormFooterLink>
+      </FormFooter>
     </ContainerCenter>
-  );
+  )
 }
 
 export default SignInPage;

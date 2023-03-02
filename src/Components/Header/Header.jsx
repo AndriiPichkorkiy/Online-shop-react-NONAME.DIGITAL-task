@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 import PrivateNavigation from "../Navigation/PrivateNavigation";
-import { HeaderContainer, AuthContainer } from "./Header.styled";
+import { HeaderContainer, AuthContainer, TitleHeader } from "./Header.styled";
 
 
 const Header = () => {
@@ -13,8 +13,8 @@ const Header = () => {
   }
   return (
     <HeaderContainer>
-      <a onClick={navigateToHome} href="./">
-        <h1>Online Shop</h1>
+      <a onClick={navigateToHome} href="./" style={{ "textDecoration": "none" }}>
+        <TitleHeader>Online Shop</TitleHeader>
       </a>
       <Navigation />
       <AuthContainer>

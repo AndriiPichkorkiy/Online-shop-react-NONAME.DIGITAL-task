@@ -5,7 +5,7 @@ import Loader from "../../Components/Loader/Loader";
 import CategoriesList from "../../Components/ProductsComponents/Categories/Categories";
 import Filters from "../../Components/ProductsComponents/Filter/Filters";
 import ProductsList from "../../Components/ProductsComponents/Products/ProductsList";
-import { PageContainer, FilterColumn, ProductColumn } from "./AllProductsPage.styled";
+import { PageContainer, FilterColumn, ProductColumn, TitleH3 } from "./AllProductsPage.styled";
 
 const AllProductsPage = () => {
   const [products, setProduct] = useState([])
@@ -41,15 +41,14 @@ const AllProductsPage = () => {
   return (
     <PageContainer>
       <FilterColumn>
-        <h3>categories</h3>
+        <TitleH3>categories</TitleH3>
         <CategoriesList categories={categories} onClick={chooseCategory} />
-        <h3>filters</h3>
+        <TitleH3>filters</TitleH3>
         <Filters products={products} setProduct={setProduct} />
       </FilterColumn>
 
       {isLoading ? <Loader /> : <ProductColumn>
         <ProductsList products={products} />
-        <p>Items: {products.length}</p>
       </ProductColumn>}
 
 

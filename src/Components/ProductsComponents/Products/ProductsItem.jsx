@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { Card, CharTitle, CharDesc, ImageThumb, Title, Description, PriceTitle, PriceDecs } from "./Products.styled"
+import { Card, CharTitle, CharDesc, ImageThumb, Title, Description, PriceTitle, PriceDecs, Rating } from "./Products.styled"
 
 const ProductsItem = ({ product: { id, description, image, price, rating, title, category } }) => {
   const navigate = useNavigate()
@@ -15,7 +15,7 @@ const ProductsItem = ({ product: { id, description, image, price, rating, title,
       <Description>{description}</Description>
       <PriceTitle>price:</PriceTitle><PriceDecs> {price}</PriceDecs>
 
-      <p>rating: {rating.rate} of {rating.count} votes</p>
+      <Rating>rating: {rating.rate} of {rating.count} votes</Rating>
     </Card>
   )
 }

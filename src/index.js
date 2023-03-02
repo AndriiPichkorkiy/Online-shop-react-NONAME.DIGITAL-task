@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { persistor, store } from "./redux/store";
@@ -27,11 +27,11 @@ root.render(
           redirect_uri: window.location.origin,
         }}
       >
-        <BrowserRouter>
+        <HashRouter>
           {/* <React.StrictMode> */}
           <App />
           {/* </React.StrictMode> */}
-        </BrowserRouter>
+        </HashRouter>
       </Auth0Provider>
     </PersistGate>
   </Provider>

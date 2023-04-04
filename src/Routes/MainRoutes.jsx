@@ -3,7 +3,7 @@ import CommonTemplate from '../Components/CommonTemplate/CommonTemplate';
 import HomePage from '../Pages/HomePage';
 import CabinetPage from '../Pages/CabinetPage/CabinetPage';
 import AllProductsPage from '../Pages/AllProductsPage/AllProductsPage';
-import ProductPage from '../Pages/ProductPage';
+import ProductPage from '../Pages/ProductPage/ProductPage';
 import SingUpPage from '../Pages/SingUpPage';
 import SignInPage from '../Pages/SignInPage';
 import PrivateRoute from './PrivateRoute';

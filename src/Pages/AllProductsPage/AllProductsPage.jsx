@@ -33,10 +33,11 @@ const AllProductsPage = () => {
 
   }, [selectedCategory])
 
+  const PUBLIC_URL = process.env.PUBLIC_URL;
 
   const chooseCategory = (categoryName) => {
     setSelectedCategory(categoryName)
-    window.history.replaceState(null, "New Page Title", "/products/" + categoryName)
+    window.history.replaceState(null, "online shop all products", PUBLIC_URL + "/products/" + categoryName)
   }
   return (
     <PageContainer>

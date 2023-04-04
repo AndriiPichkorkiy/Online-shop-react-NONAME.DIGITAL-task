@@ -12,6 +12,7 @@ export const ContentWrapper = styled.div`
   margin: 0 auto;
 `
 export const FooterWrapper = styled.div`
+padding-top: 1rem;
   flex: 0 0 auto;
 `
 

@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
-import { apiShop } from "../api/apiShop";
-import { Card, CharTitle, CharDesc, ImageThumb, Title, Description, PriceTitle, PriceDecs } from "../Components/ProductsComponents/Products/Products.styled"
-import { addProductToCart } from "../redux/cartSlice";
-import { getUser } from '../redux/selectors'
+import { apiShop } from "../../api/apiShop";
+import { CharTitle, CharDesc, Description, PriceTitle, PriceDecs } from "../../Components/ProductsComponents/Products/Products.styled"
+import { ProductPageContainer, ImageThumb, Title, } from "./ProductsPage.styled"
+import { addProductToCart } from "../../redux/cartSlice";
+import { getUser } from '../../redux/selectors'
 import { useSelector } from "react-redux";
 
-import PopupBuy from "../Components/Portal/Popup";
-import Portal from "../Components/Portal/Portal";
+import PopupBuy from "../../Components/Portal/Popup";
+import Portal from "../../Components/Portal/Portal";
 
-import { StyledButton, ButtonGoBack } from "../Components/Button/StyledButton"
-import { ContainerCenter } from "./Common.styled";
+import { StyledButton, ButtonGoBack } from "../../Components/Button/StyledButton"
+import { ContainerCenter } from "../Common.styled";
 
 import { ArrowBack } from '@styled-icons/boxicons-regular/ArrowBack'
 
@@ -51,7 +52,7 @@ const ProductPage = () => {
 
   return (
     <ContainerCenter>
-      <Card>
+      <ProductPageContainer>
         <ButtonGoBack to={backLinkHref}>
           <ArrowBack size={iconsSize} title="Linkedin" />
           Go back
@@ -65,7 +66,7 @@ const ProductPage = () => {
 
         <p>rating: {rating.rate} of {rating.count} votes</p>
         <StyledButton onClick={isLogin ? addToCart : redirectOnBuy} coloredBtn>Add to Cart</StyledButton>
-      </Card>
+      </ProductPageContainer>
       {
         isShowModal &&
         <Portal toggleModal={hideModal} >
